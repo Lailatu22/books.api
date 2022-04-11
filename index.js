@@ -1,5 +1,5 @@
 const express = require("express")
-const morgan = require("morgan");
+
 const logger = require("./middlewares/books.logger")
 const booksRoute = require("./routes/booksRoute")
 
@@ -9,7 +9,7 @@ const app = express()
 
 //middleware
 app.use(express.json());
-app.use(morgan("dev"));
+app.use(logger);
 app.use(booksRoute);
 
 
